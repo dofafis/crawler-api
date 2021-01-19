@@ -1,0 +1,40 @@
+{
+  "name": "crawler-api",
+  "version": "1.0.0",
+  "description": "Rest API for crawling available hotel rooms and prices by check in and check out date",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' ./src/index.ts ",
+    "build": "rm -rf build && tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "crawler-api"
+  },
+  "keywords": [
+    "nodejs",
+    "crawler",
+    "expressjs",
+    "typescript",
+    "rest"
+  ],
+  "author": "Lucas Farias de Oliveira (dofafis)",
+  "license": "ISC",
+  "dependencies": {
+    "@types/morgan": "^1.9.2",
+    "@web-master/node-web-crawler": "^0.10.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "typescript-rest": "^3.0.2",
+    "typescript-rest-swagger": "^1.1.5",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.9",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
