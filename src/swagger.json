@@ -60,7 +60,7 @@
 		"version": "1.0.0"
 	},
 	"paths": {
-		"/buscar": {
+		"/search": {
 			"post": {
 				"operationId": "RoomsCrawlerSearchAvailableRooms",
 				"produces": [

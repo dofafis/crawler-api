@@ -7,7 +7,7 @@ describe('Crawler tests', () => {
     })
     it('Should return a validation error checkin is past date', async () => {
         await request(server)
-            .post('/buscar')
+            .post('/search')
             .send({
                 checkin: '02/03/2020',
                 checkout: '12/03/2021'
@@ -20,7 +20,7 @@ describe('Crawler tests', () => {
 
     it('Should return a validation error checkout is past date', async () => {
         await request(server)
-            .post('/buscar')
+            .post('/search')
             .send({
                 checkin: '02/03/2021',
                 checkout: '12/03/2020'
@@ -33,7 +33,7 @@ describe('Crawler tests', () => {
 
     it('Should return a validation error checkout should be after checking', async () => {
         await request(server)
-            .post('/buscar')
+            .post('/search')
             .send({
                 checkin: '02/03/2021',
                 checkout: '12/03/2020'
@@ -46,7 +46,7 @@ describe('Crawler tests', () => {
 
     it('Should return a validation error checking invalid date', async () => {
         await request(server)
-            .post('/buscar')
+            .post('/search')
             .send({
                 checkin: '99/99/9999',
                 checkout: '12/03/2020'
@@ -59,7 +59,7 @@ describe('Crawler tests', () => {
 
     it('Should return a validation error checkout invalid date', async () => {
         await request(server)
-            .post('/buscar')
+            .post('/search')
             .send({
                 checkin: '12/03/2021',
                 checkout: '99/99/9999'
@@ -72,7 +72,7 @@ describe('Crawler tests', () => {
 
     it('Should return a validation error checkout invalid date', async () => {
         await request(server)
-            .post('/buscar')
+            .post('/search')
             .send({
                 checkout: '12/03/2021'
             })
@@ -84,7 +84,7 @@ describe('Crawler tests', () => {
 
     it('Should return a validation error checkout invalid date', async () => {
         await request(server)
-            .post('/buscar')
+            .post('/search')
             .send({
                 checkin: '12/03/2021'
             })

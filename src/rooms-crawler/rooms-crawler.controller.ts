@@ -5,7 +5,7 @@ import { Produces } from "typescript-rest-swagger";
 import { RoomsCrawlerService } from "./rooms-crawler.service";
 const inspectOptions = { depth: 1000 }
 
-@Path('/buscar')
+@Path('/search')
 export class RoomsCrawlerController {
 
     constructor(
