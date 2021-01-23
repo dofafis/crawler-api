@@ -27,7 +27,7 @@ npm run watch
 ```
 ## Tests
 ```bash
-npm tests
+npm test
 ```
 or
 ```bash
