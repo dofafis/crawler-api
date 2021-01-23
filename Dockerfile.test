@@ -1,0 +1,9 @@
+FROM node:10.16.0-alpine as build
+
+WORKDIR /crawler-api
+
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+
+RUN npm test

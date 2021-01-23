@@ -1,4 +1,4 @@
-FROM node:8.9.4-alpine as build
+FROM node:10.16.0-alpine as build
 
 WORKDIR /crawler-api
 

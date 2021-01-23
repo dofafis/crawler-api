@@ -1,0 +1,70 @@
+basePath: null
+definitions:
+    IImageUrl:
+        description: ""
+        properties:
+            url:
+                type: string
+                description: ""
+        type: object
+    IAvailableRoom:
+        description: ""
+        properties:
+            name:
+                type: string
+                description: ""
+            description:
+                type: string
+                description: ""
+            price:
+                type: number
+                format: double
+                description: ""
+            images:
+                type: array
+                items:
+                    $ref: '#/definitions/IImageUrl'
+                description: ""
+        type: object
+    IReservationInterval:
+        description: ""
+        properties:
+            checkin:
+                type: string
+                description: ""
+            checkout:
+                type: string
+                description: ""
+        type: object
+info:
+    description: 'Rest API for crawling available hotel rooms and prices by check in and check out date'
+    license:
+        name: ISC
+    title: crawler-api
+    version: 1.0.0
+paths:
+    /buscar:
+        post:
+            operationId: RoomsCrawlerSearchAvailableRooms
+            produces:
+                - application/json
+            responses:
+                '200':
+                    description: Ok
+                    schema:
+                        type: array
+                        items:
+                            $ref: '#/definitions/IAvailableRoom'
+            description: ""
+            consumes:
+                - application/json
+            parameters:
+                -
+                    description: ""
+                    in: body
+                    name: body
+                    required: true
+                    schema:
+                        $ref: '#/definitions/IReservationInterval'
+swagger: '2.0'
+securityDefinitions: {}

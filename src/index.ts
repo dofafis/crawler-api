@@ -3,7 +3,9 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import { Server } from 'typescript-rest'
 import morgan from 'morgan'
-import { logger } from './utils'
+import * as swaggerUi from 'swagger-ui-express'
+import * as swaggerDocument from './swagger.json'
+import { httpErrorHandler } from './utils'
 
 import './rooms-crawler'
 
@@ -13,10 +15,9 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(morgan('combined'))
-
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 Server.buildServices(app)
 
-const port = Number(process.env.PORT) || 3000
-app.listen(port, () => {
-    logger.info(`Server listening on port ${port}`)
-})
+app.use(httpErrorHandler)
+
+export const application = app

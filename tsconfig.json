@@ -9,11 +9,10 @@
       "baseUrl": ".",
       "paths": {
         "@/types/*" : ["./src/types/*"],
-        "*" : ["./src/types/*"]
+        "*" : ["./src/types/*"],
+        "@/*": ["src/*"]
       },
-      "typeRoots": [
-        "./src/types"
-      ],
+      "types": ["jest", "node"],
       "resolveJsonModule": true,
       "esModuleInterop": true,
       "target": "es5",
